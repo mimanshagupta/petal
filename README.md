@@ -3,6 +3,10 @@ Web platform for e-Learning management
 
 ![Petal logo](https://dl.dropboxusercontent.com/s/er0jp3vnimhsd95/petal_icon_small.png)
 
+## Demo
+Visit -
+[Petal Demo](http://petalweb.surge.sh/)
+
 
 ## Introduction
 Learning is a product of interaction and the Petal platform (developed at HKU) aims to increase the value of these interactions.
