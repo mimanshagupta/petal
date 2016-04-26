@@ -49,12 +49,24 @@ class UploadPage extends Component {
       let videolink = _this.state.vid_link;
       let videotitle = _this.state.vid_title;
       let uploadedby = _this.state.user_display;
-      videoObject.save({
-        vid_link: videolink,
-        vid_title: videotitle,
-        username: uploadedby,
-        watched: 0
-      });
+      videolink = this.filterLink(videolink);
+      if (!videolink.endsWith('.mp4')) {
+        alert('Please enter a valid url for the video file. Only mp4 format supported.')
+      }
+      else {
+        videoObject.save({
+          vid_link: videolink,
+          vid_title: videotitle,
+          username: uploadedby,
+          watched: 0
+        });
+      }
+  }
+
+  filterLink(link) {
+    link = link.replace('www', 'dl').replace('dropbox', 'dropboxusercontent');
+    link = link.replace(/(\?).*/g,'');
+    return link;
   }
 
   getAllVideos() {
